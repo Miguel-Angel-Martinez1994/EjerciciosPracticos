@@ -9,22 +9,31 @@ Muestre por pantalla
     si es mayor o igual que 7 y menor o igual que 10 'sobresaliente'*/
 
 const notas =()=>{
-    for(let i=0;i<3;i++){
+    let vueltas=parseInt(prompt("Cantidad de notas que va agregar"));
+    let media=0;
+    for(let i=0;i<vueltas;i++){
         const nota=parseInt(prompt("Agregue nota "));
         if(nota<5){
+            media = media+ nota;
             document.write(
                 `<p>La nota ${i} esta suspenso</p>`
             )
         }else if(nota>=5 && nota<7){
+            media = media+ nota;
             document.write(
                 `<p>La nota ${i} esta aprobado</p>`
             )
         }else if(nota>=7 && nota<=10){
+            media = media + nota;
             document.write(
                 `<p>La nota ${i} esta sobresaliente</p>`
             )
         }
     }
+    media =media/vueltas;
+    document.write(
+        `La media de la clase es ${media}`
+    )
 }
 
 notas();
